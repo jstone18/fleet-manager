@@ -6,7 +6,7 @@
 			"description": "Oil change is needed on ambulance 1",
 			"date": "11-17-2019",
 			"notes": "This is the 2nd request.",
-			"creator": "Jason Stone",
+			"user": "Jason Stone",
 			"isComplete": false
 		},
 		{
@@ -15,7 +15,7 @@
 			"description": "Tires need to be rotated on A4",
 			"date": "11-17-2019",
 			"notes": "Take a look at the rear passenger tire for worn tread",
-			"creator": "Ken Dermody",
+			"user": "Ken Dermody",
 			"isComplete": false
 		},
 		{
@@ -24,7 +24,7 @@
 			"description": "Air filter hasn't been changed in a while on A3",
 			"date": "11-17-2019",
 			"notes": "",
-			"creator": "Jon Silvestri",
+			"user": "Jon Silvestri",
 			"isComplete": true
 		}
 	],

@@ -20,7 +20,7 @@ const ServiceItem = ({ service }) => {
 				<span className="grey-text">
 					<span className="black-text">ID # {service.id}</span> last updated by
 					{""}
-					<span className="black-text"> {service.creator}</span> on{" "}
+					<span className="black-text"> {service.user}</span> on{" "}
 					<Moment format="MMMM Do YYYY, h:mm:ss a">{service.date}</Moment>
 				</span>
 				<a href="!#" className="secondary-content">
