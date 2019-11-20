@@ -5,7 +5,6 @@ const AddServiceModal = () => {
 	const [title, setTitle] = useState("");
 	const [description, setDescription] = useState("");
 	const [user, setUser] = useState("");
-	const [isComplete, setIsComplete] = useState(false);
 
 	const onSubmit = () => {
 		if (description === "" || user === "") {
@@ -13,7 +12,10 @@ const AddServiceModal = () => {
 				html: "Please enter a description and person creating form"
 			});
 		} else {
-			console.log(title, description, user, isComplete);
+			console.log(title, description, user);
+			setTitle("");
+			setDescription("");
+			setUser("");
 		}
 	};
 

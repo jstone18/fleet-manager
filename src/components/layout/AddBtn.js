@@ -12,14 +12,14 @@ const AddBtn = () => {
 			<ul>
 				<li>
 					<button
-						data-target="#user-list-modal"
+						data-target="user-list-modal"
 						className="btn-floating green modal-trigger">
 						<i className="material-icons">person</i>
 					</button>
 				</li>
 				<li>
 					<button
-						data-target="#user-modal"
+						data-target="add-user-modal"
 						className="btn-floating red modal-trigger">
 						<i className="material-icons">person_add</i>
 					</button>
