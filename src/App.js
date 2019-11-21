@@ -6,10 +6,10 @@ import "materialize-css/dist/css/materialize.min.css";
 import M from "materialize-css/dist/js/materialize.min.js";
 import "./App.css";
 import Navbar from "./components/layout/Navbar";
-import ServiceLogs from "./components/logs/ServiceLogs";
+import ServiceLogs from "./components/services/ServiceLogs";
 import AddBtn from "./components/layout/AddBtn";
-import AddServiceModal from "./components/logs/AddServiceModal";
-import EditServiceModal from "./components/logs/EditServiceModal";
+import AddServiceModal from "./components/services/AddServiceModal";
+import EditServiceModal from "./components/services/EditServiceModal";
 import AddUserModal from "./components/users/AddUserModal";
 import UserListModal from "./components/users/UserListModal";
 
