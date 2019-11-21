@@ -1,0 +1,14 @@
+export const GET_SERVICES = "GET_SERVICES";
+export const ADD_SERVICE = "ADD_SERVICE";
+export const DELETE_SERVICE = "DELETE_SERVICE";
+export const SET_CURRENT = "SET_CURRENT";
+export const CLEAR_CURRENT = "CLEAR_CURRENT";
+export const UPDATE_SERVICE = "UPDATE_SERVICE";
+export const CLEAR_SERVICES = "CLEAR_SERVICES";
+export const SET_LOADING = "SET_LOADING";
+export const SERVICE_ERROR = "SERVICE_ERROR";
+export const SEARCH_SERVICES = "SEARCH_SERVICES";
+export const GET_USERS = "GET_USERS";
+export const ADD_USER = "ADD_USER";
+export const DELETE_USER = "DELETE_USER";
+export const USERS_ERROR = "USERS_ERROR";
