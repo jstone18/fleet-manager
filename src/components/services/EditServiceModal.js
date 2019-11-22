@@ -35,7 +35,7 @@ const EditServiceModal = ({ updateService, current }) => {
 			};
 			updateService(updService);
 			M.toast({
-				html: "Service Log has been updated."
+				html: `Service Log updated by ${user}`
 			});
 		}
 	};
