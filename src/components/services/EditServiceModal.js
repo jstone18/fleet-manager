@@ -1,10 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import M from "materialize-css/dist/js/materialize.min.js";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { updateService } from "../../redux/actions/serviceActions";
 
-const EditServiceModal = () => {
-	const [title, setTitle] = useState("");
+const EditServiceModal = ({ updateService, current }) => {
+	const [vehicle, setVehicle] = useState("");
 	const [description, setDescription] = useState("");
 	const [user, setUser] = useState("");
+	const [attention, setAttention] = useState(false);
+
+	useEffect(() => {
+		if (current) {
+			setVehicle(current.vehicle);
+			setDescription(current.description);
+			setAttention(current.attention);
+			setUser(current.user);
+		}
+	}, [current]);
 
 	const onSubmit = () => {
 		if (description === "" || user === "") {
@@ -12,10 +25,18 @@ const EditServiceModal = () => {
 				html: "Please enter a description and person creating form"
 			});
 		} else {
-			console.log(title, description, user);
-			setTitle("");
-			setDescription("");
-			setUser("");
+			const updService = {
+				id: current.id,
+				vehicle,
+				description,
+				user,
+				attention,
+				date: new Date()
+			};
+			updateService(updService);
+			M.toast({
+				html: "Service Log has been updated."
+			});
 		}
 	};
 
@@ -25,15 +46,21 @@ const EditServiceModal = () => {
 				<h4>Edit Service</h4>
 				<div className="row">
 					<div className="input-field">
-						<input
-							type="text"
-							name="title"
-							value={title}
-							onChange={e => setTitle(e.target.value)}
-						/>
-						<label htmlFor="title" className="active">
-							Service Title
-						</label>
+						<select
+							name="vehicle"
+							value={vehicle}
+							className="browser-default"
+							onChange={e => setVehicle(e.target.value)}>
+							<option value="" disabled>
+								Vehicle Number
+							</option>
+							<option value="61A1">61A1</option>
+							<option value="61A2">61A2</option>
+							<option value="61A3">61A3</option>
+							<option value="61A4">61A4</option>
+							<option value="FlyCar">FlyCar</option>
+						</select>
+						Vehicle:
 					</div>
 				</div>
 
@@ -45,9 +72,7 @@ const EditServiceModal = () => {
 							value={description}
 							onChange={e => setDescription(e.target.value)}
 						/>
-						<label htmlFor="description" className="active">
-							Service Description
-						</label>
+						Service Description:
 					</div>
 				</div>
 
@@ -65,6 +90,24 @@ const EditServiceModal = () => {
 							<option value="Ken Dermody">Ken Dermody</option>
 							<option value="Jon Silvestri">Jon Silvestri</option>
 						</select>
+						Updated by:
+					</div>
+				</div>
+
+				<div className="row">
+					<div className="input-field">
+						<p>
+							<label>
+								<input
+									type="checkbox"
+									className="filled-in"
+									checked={attention}
+									value={attention}
+									onChange={e => setAttention(!attention)}
+								/>
+								<span>Needs Attention</span>
+							</label>
+						</p>
 					</div>
 				</div>
 			</div>
@@ -80,9 +123,17 @@ const EditServiceModal = () => {
 	);
 };
 
+EditServiceModal.propTypes = {
+	current: PropTypes.object.isRequired,
+	updateService: PropTypes.func.isRequired
+};
+
 const modalStyle = {
 	width: "75%",
 	height: "75%"
 };
 
-export default EditServiceModal;
+const mapStateToProps = state => ({
+	current: state.service.current
+});
+export default connect(mapStateToProps, { updateService })(EditServiceModal);

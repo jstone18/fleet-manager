@@ -81,7 +81,7 @@ const AddServiceModal = ({ addService }) => {
 							className="browser-default"
 							onChange={e => setUser(e.target.value)}>
 							<option value="" disabled>
-								Submitted by
+								Added by
 							</option>
 							<option value="Jason Stone">Jason Stone</option>
 							<option value="Ken Dermody">Ken Dermody</option>
