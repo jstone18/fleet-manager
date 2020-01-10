@@ -8,13 +8,12 @@ const EditServiceModal = ({ updateService, current }) => {
 	const [vehicle, setVehicle] = useState("");
 	const [description, setDescription] = useState("");
 	const [user, setUser] = useState("");
-	const [attention, setAttention] = useState(false);
+	const [done, setDone] = useState(false);
 
 	useEffect(() => {
 		if (current) {
 			setVehicle(current.vehicle);
 			setDescription(current.description);
-			setAttention(current.attention);
 			setUser(current.user);
 		}
 	}, [current]);
@@ -30,7 +29,7 @@ const EditServiceModal = ({ updateService, current }) => {
 				vehicle,
 				description,
 				user,
-				attention,
+				done,
 				date: new Date()
 			};
 			updateService(updService);
@@ -101,11 +100,11 @@ const EditServiceModal = ({ updateService, current }) => {
 								<input
 									type="checkbox"
 									className="filled-in"
-									checked={attention}
-									value={attention}
-									onChange={e => setAttention(!attention)}
+									checked={done}
+									value={done}
+									onChange={e => setDone(!done)}
 								/>
-								<span>Needs Attention</span>
+								<span>Done?</span>
 							</label>
 						</p>
 					</div>

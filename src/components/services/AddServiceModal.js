@@ -20,9 +20,7 @@ const AddServiceModal = ({ addService }) => {
 				vehicle,
 				description,
 				user,
-				date: new Date(),
-				attention: true,
-				isComplete: false
+				date: new Date()
 			};
 
 			addService(newService);

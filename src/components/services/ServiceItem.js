@@ -17,9 +17,7 @@ const ServiceItem = ({ service, deleteService, setCurrent }) => {
 			<div>
 				<a
 					href="#edit-service-modal"
-					className={`modal-trigger ${
-						service.attention ? "red-text" : "blue-text"
-					}`}
+					className={`modal-trigger ${service.done ? "blue-text" : "red-text"}`}
 					onClick={() => setCurrent(service)}>
 					{service.vehicle}
 					<br />
