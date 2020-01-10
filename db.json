@@ -1,55 +1,59 @@
 {
-  "services": [
-    {
-      "id": 1,
-      "vehicle": "61A2",
-      "description": "Oil change needed!",
-      "user": "Ken Dermody",
-      "attention": false,
-      "date": "2019-11-22T05:48:19.579Z"
-    },
-    {
-      "vehicle": "FlyCar",
-      "description": "Inspection needed and expired",
-      "user": "Jon Silvestri",
-      "date": "2019-11-22T04:07:45.831Z",
-      "attention": true,
-      "isComplete": false,
-      "id": 2
-    },
-    {
-      "id": 3,
-      "vehicle": "61A3",
-      "description": "Tire rotation needed asap!",
-      "user": "Jason Stone",
-      "attention": false,
-      "date": "2019-11-22T05:44:12.907Z"
-    },
-    {
-      "vehicle": "61A4",
-      "description": "Left blinker is not working ",
-      "user": "Jason Stone",
-      "date": "2019-11-22T04:11:00.986Z",
-      "attention": true,
-      "isComplete": false,
-      "id": 4
-    }
-  ],
-  "users": [
-    {
-      "id": 1,
-      "firstName": "Jason",
-      "lastName": "Stone"
-    },
-    {
-      "id": 2,
-      "firstName": "Ken",
-      "lastName": "Dermody"
-    },
-    {
-      "id": 3,
-      "firstName": "Jon",
-      "lastName": "Silvestri"
-    }
-  ]
+	"services": [
+		{
+			"id": 1,
+			"vehicle": "61A2",
+			"description": "Oil change needed",
+			"user": "Jason Stone",
+			"done": true,
+			"date": "2020-01-10T21:29:46.554Z"
+		}
+	],
+	"issues": [
+		{
+			"vehicle": "61A2",
+			"description": "Driver side brake light is out.",
+			"user": "Jason Stone",
+			"date": "2020-01-09T21:05:09.506Z",
+			"id": 1
+		},
+		{
+			"vehicle": "61A1",
+			"description": "AC not working in patient compartment",
+			"user": "Jason Stone",
+			"date": "2020-01-09T21:05:09.506Z",
+			"id": 2
+		}
+	],
+	"users": [
+		{
+			"id": 1,
+			"firstName": "Jason",
+			"lastName": "Stone"
+		},
+		{
+			"id": 2,
+			"firstName": "Ken",
+			"lastName": "Dermody"
+		},
+		{
+			"id": 3,
+			"firstName": "Jon",
+			"lastName": "Silvestri"
+		}
+	],
+	"vehicles": [
+		{
+			"id": 1,
+			"identifier": "61A1",
+			"year": 2015,
+			"make": "Ford",
+			"model": "F-350",
+			"startOdometer": 74805.6,
+			"endOdometer": 74906.1,
+			"status": "in-service",
+			"services": [],
+			"issues": []
+		}
+	]
 }

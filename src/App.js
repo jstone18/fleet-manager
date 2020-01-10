@@ -1,36 +1,30 @@
-import React, { Fragment, useEffect } from "react";
+import React from "react";
 import { Provider } from "react-redux";
 import store from "./redux/store";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import "materialize-css/dist/css/materialize.min.css";
-import M from "materialize-css/dist/js/materialize.min.js";
 import "./App.css";
 import Navbar from "./components/layout/Navbar";
-import ServiceLogs from "./components/services/ServiceLogs";
-import AddBtn from "./components/layout/AddBtn";
-import AddServiceModal from "./components/services/AddServiceModal";
-import EditServiceModal from "./components/services/EditServiceModal";
-import AddUserModal from "./components/users/AddUserModal";
-import UserListModal from "./components/users/UserListModal";
+
+import ServicesContainer from "./containers/ServicesContainer";
+import Home from "./components/home/Home";
+import IssuesContainer from "./containers/IssuesContainer";
+import Vehicles from "./components/vehicles/Vehicles";
 
 const App = () => {
-	useEffect(() => {
-		// Init Materialize JS
-		M.AutoInit();
-	});
 	return (
 		<Provider store={store}>
-			<Fragment>
+			<Router>
 				<Navbar />
-				<div className="container">
-					<AddBtn />
-					<AddServiceModal />
-					<EditServiceModal />
-					<ServiceLogs />
-					<AddUserModal />
-					<UserListModal />
-				</div>
-			</Fragment>
+				<Switch>
+					<div className="container">
+						<Route exact path="/" component={Home} />
+						<Route exact path="/vehicles" component={Vehicles} />
+						<Route exact path="/services" component={ServicesContainer} />
+						<Route exact path="/issues" component={IssuesContainer} />
+					</div>
+				</Switch>
+			</Router>
 		</Provider>
 	);
 };

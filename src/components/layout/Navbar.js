@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
 	return (
@@ -11,34 +12,34 @@ const Navbar = () => {
 					</a>
 					<ul className="left hide-on-med-and-down">
 						<li>
-							<a href="badges.html">
+							<Link to="/">
 								Home
 								<i className="material-icons left">home</i>
-							</a>
+							</Link>
 						</li>
-						<li>
-							<a href="collapsible.html">
+						{/* <li>
+							<Link to="/users">
 								User
 								<i className="material-icons left">person</i>
-							</a>
-						</li>
+							</Link>
+						</li> */}
 						<li>
-							<a href="collapsible.html">
+							<Link to="vehicles">
 								Vehicles
 								<i className="material-icons left">airport_shuttle</i>
-							</a>
+							</Link>
 						</li>
 						<li>
-							<a href="mobile.html">
+							<Link to="/services">
 								<i className="material-icons left">build</i>
 								Services
-							</a>
+							</Link>
 						</li>
 						<li>
-							<a href="mobile.html">
+							<Link to="/issues">
 								<i className="material-icons left">report_problem</i>
 								Issues
-							</a>
+							</Link>
 						</li>
 					</ul>
 				</div>
